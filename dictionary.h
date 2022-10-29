@@ -1,115 +1,41 @@
 #ifndef DICTIONARY_H
 # define DICTIONARY_H
 
+#include <stdlib.h>
+#include <stdio.h>
+
 //verbes
-typedef struct s_mot_verbe
+typedef struct s_mot
 {
 	char *temps;
+	char genre;
 	char nombre;
 	char personne;
 	char *base;
 	char *mot;
-} t_mot_verbe;
+} t_mot;
 
-typedef struct s_verbe
+typedef struct s_list
 {
-	t_mot_verbe *mot;
-	struct s_verbe *next;
-} t_verbe;
+	t_mot *mot;
+	struct s_list *next;
+} t_list;
 
-typedef struct s_node_verbe
-{
-	char lettre;
-	t_verbe *liste_flechie;
-	struct s_node_verbe *tab_node[26];
-} t_node_verbe;
-
-typedef struct s_tree_verbe
-{
-	t_node_verbe *root;
-} t_tree_verbe;
-
-void			ft_init_verbe();
-t_tree_verbe	createTreeVerbe(t_node_verbe *node);
-t_node_verbe	*createNodeVerbe(char lettre);
-
-//adjectifs
-typedef struct s_mot_ajd
-{
-	char genre;
-	char nombre;
-	char *base;
-	char *mot;
-} t_mot_adj;
-
-typedef struct s_adj
-{
-	t_mot_adj *mot;
-	struct s_adj *next;
-} t_adj;
-
-typedef struct s_node_adj
+typedef struct s_node
 {
 	char lettre;
-	t_adj *liste_flechie;
-	struct s_node_adj *tab_node[26];
-} t_node_adj;
+	t_list *liste_flechie;
+	struct s_node *tab_node[26];
+} t_node;
 
-typedef struct s_tree_adj
+typedef struct s_tree
 {
-	t_node_adj *root;
-} t_tree_adj;
+	t_node *root;
+} t_tree;
 
-//adverbes
-typedef struct s_mot_ajv
-{
-	char *base;
-	char *mot;
-} t_mot_adv;
-
-typedef struct s_adv
-{
-	t_mot_adv *mot;
-	struct s_adv *next;
-} t_adv;
-
-typedef struct s_node_adv
-{
-	char lettre;
-	t_adv *liste_flechie;
-	struct s_node_adv *tab_node[26];
-} t_node_adv;
-
-typedef struct s_tree_adv
-{
-	t_node_adv *root;
-} t_tree_adv;
-
-//noms
-typedef struct s_mot_nom
-{
-	char genre;
-	char nombre;
-	char *base;
-	char *mot;
-} t_mot_nom;
-
-typedef struct s_nom
-{
-	t_mot_nom *mot;
-	struct s_nom *next;
-} t_nom;
-
-typedef struct s_node_nom
-{
-	char lettre;
-	t_nom *liste_flechie;
-	struct s_node_nom *tab_node[26];
-} t_node_nom;
-
-typedef struct s_tree_nom
-{
-	t_node_nom *root;
-} t_tree_nom;
+void	ft_init();
+t_tree	*ft_init_tree();
+t_tree	createTree(t_node *node);
+t_node	*createNode(char lettre);
 
 #endif
