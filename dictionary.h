@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-//verbes
 typedef struct s_mot
 {
 	char *temps;
@@ -33,9 +33,15 @@ typedef struct s_tree
 	t_node *root;
 } t_tree;
 
-void	ft_init();
-t_tree	*ft_init_tree();
+//init
+t_tree	ft_init_verbe();
 t_tree	createTree(t_node *node);
 t_node	*createNode(char lettre);
+t_list *createFlechie(t_list *list, char *str);
+
+//parsing
+int ft_choose(char *str);
+int ft_remplit(char *str, t_tree tree, char *flechie);
+void ft_display(t_node *node);
 
 #endif
