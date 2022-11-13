@@ -63,4 +63,5 @@ void	ft_clear(char **str);
 
 /*a faire :
 parsing verif mot a traiter
+split a clean
 */
