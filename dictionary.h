@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
+//struct to stock the infos of the word
 typedef struct s_mot
 {
 	char *temps;

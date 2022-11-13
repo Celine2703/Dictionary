@@ -1,5 +1,6 @@
 #include "dictionary.h"
 
+//clear a table of strings
 void	ft_clear_split(char **str)
 {
 	int	i;

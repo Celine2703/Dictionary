@@ -36,6 +36,7 @@ static int	ft_count(const char *str, char s, int i)
 	return (nbmot);
 }
 
+//clear the tab if something went wrong
 static void	ft_clear(char **str, int j)
 {
 	int	i;
@@ -50,6 +51,7 @@ static void	ft_clear(char **str, int j)
 	str = 0;
 }
 
+//put the strings in the table
 static int	ft_put_inside(char **final, const char *str, char s, int i)
 {
 	int	j;

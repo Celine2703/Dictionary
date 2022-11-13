@@ -1,22 +1,26 @@
 #include "dictionary.h"
 
-int ft_choose(char *str)
+//choose which tree based on the data of the word(verb, noun, etc...)
+int ft_choose(char *flechie)
 {
-    if (!strncmp(str, "Ver", 3))
+    //use of the function strncmp in string.h -> strncmp(first string, second string, number of bytes compared)
+    if (!strncmp(flechie, "Ver", 3))
         return (1);
-    else if (!strncmp(str, "Nom", 3))
+    else if (!strncmp(flechie, "Nom", 3))
         return (2);
-    else if (!strncmp(str, "Adj", 3))
+    else if (!strncmp(flechie, "Adj", 3))
         return (3);
-    else if (!strncmp(str, "Adv", 3))
+    else if (!strncmp(flechie, "Adv", 3))
         return (4);
     return (0);
 }
 
+//put the base and the word in the tree
 int ft_remplit(t_recup data, t_tree tree)
 {
     int i = 0;
     t_node *node = tree.root;
+    //put the base in the tree letter by letter
     while (data.base[i] != 0)
     {
         if (node ->tab_node[data.base[i] - 'a'] == NULL)
@@ -24,6 +28,7 @@ int ft_remplit(t_recup data, t_tree tree)
         node = node ->tab_node[data.base[i] - 'a'];
         i++;
     }
+    //put the word in a list in the last letter of the base
     node ->liste_flechie = createFlechie(node ->liste_flechie, data);
     return (0);
 }
