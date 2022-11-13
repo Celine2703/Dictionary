@@ -43,7 +43,6 @@ t_node    *createNode(char lettre)
 //create a list with the word or add the word to a existent list 
 t_list *createFlechie(t_list *list, t_recup data)
 {
-    t_list *temp = list;
     //if there isn't a list yet
     if (list == NULL)
     {
@@ -51,21 +50,22 @@ t_list *createFlechie(t_list *list, t_recup data)
         //add the new word
         list ->mot = createMot(data);
         list ->next = NULL;
+        return (list);
     }
     //if there is a list, add the word at the end
     else
     {
-        while (list != NULL) //go to the end of the list
+        t_list *head = list;
+        while (list ->next != NULL) //go to the end of the list
         {
-            temp = list;
             list = list ->next;
         }
-        temp ->next = malloc(sizeof(t_list));
+        list ->next = malloc(sizeof(t_list));
         //add the new word
-        temp ->next ->mot = createMot(data);
-        temp ->next ->next = NULL;
+        list ->next ->mot = createMot(data);
+        list ->next ->next = NULL;
+        return(head);
     }
-    return (list);
 }
 
 //create a struct t_mot with the word
@@ -87,6 +87,8 @@ t_mot *createMot(t_recup data)
             }
         }
     }
+    mot ->base = data.base;
+    mot ->mot = data.mot;
     ft_clear_split(split); //free the table
     return (mot);
 }

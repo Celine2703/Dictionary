@@ -56,6 +56,7 @@ t_mot *createMot(t_recup data);
 int ft_choose(char *flechie);
 int ft_remplit(t_recup data, t_tree *tree);
 void ft_display(t_node *node);
+void display_f(t_list *list);
 
 //clear
 void	ft_clear_split(char **str);
@@ -80,4 +81,6 @@ Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vo
 trouver un moyen de noter cette information de manière claire
 
 4 5
+
+README
 */
