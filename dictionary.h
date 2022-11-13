@@ -65,4 +65,18 @@ void	ft_clear_split(char **str);
 /*a faire :
 parsing verif mot a traiter
 split a clean
+Définir une structure de données adaptée au stockage des formes fléchies. Cette 
+structure devra comporter un entier indiquant le nombre de formes fléchies qu’elle 
+stocke ; 
+Justifier ce choix dans votre rapport de projet ; 
+Dans les nœuds adaptés à cette catégorie, stocker un pointeur vers cette structure de 
+données, et non directement cette structure de données. Vous indiquerez également 
+dans votre rapport, pourquoi cette contrainte est réellement utile et nécessaire pour 
+l’implémentation du programme.
+
+stocker l infinitif des verbs
+
+Formes fléchies manquantes 
+Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vous faut 
+trouver un moyen de noter cette information de manière claire
 */
