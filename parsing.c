@@ -16,10 +16,10 @@ int ft_choose(char *flechie)
 }
 
 //put the base and the word in the tree
-int ft_remplit(t_recup data, t_tree tree)
+int ft_remplit(t_recup data, t_tree *tree)
 {
     int i = 0;
-    t_node *node = tree.root;
+    t_node *node = tree[data.arbre].root;
     //put the base in the tree letter by letter
     while (data.base[i] != 0)
     {

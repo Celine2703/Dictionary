@@ -1,10 +1,12 @@
 #include "dictionary.h"
 
-t_tree    ft_init_verbe()
+void    ft_init_tab(t_tree *tab_tree)
 {
-    t_tree tab_verbe;
-    tab_verbe = createTree(createNode(-1));
-    return (tab_verbe);
+    tab_tree[0] = createTree(createNode(-1));
+    tab_tree[1] = createTree(createNode(-1));
+    tab_tree[2] = createTree(createNode(-1));
+    tab_tree[3] = createTree(createNode(-1));
+    return;
 }
 
 //initializes the struct t_mot

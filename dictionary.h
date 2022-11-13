@@ -46,7 +46,7 @@ typedef struct s_recup
 char	**ft_split(char const *str, char const c);
 
 //init
-t_tree	ft_init_verbe();
+void    ft_init_tab(t_tree *tab_tree);
 t_tree	createTree(t_node *node);
 t_node	*createNode(char lettre);
 t_list *createFlechie(t_list *list, t_recup data);
@@ -54,7 +54,7 @@ t_mot *createMot(t_recup data);
 
 //parsing
 int ft_choose(char *flechie);
-int ft_remplit(t_recup data, t_tree tree);
+int ft_remplit(t_recup data, t_tree *tree);
 void ft_display(t_node *node);
 
 //clear
@@ -63,8 +63,7 @@ void	ft_clear_split(char **str);
 #endif
 
 /*a faire :
-parsing verif mot a traiter
-split a clean
+parsing verif mot a traiter (et ceux a pas traiter dc)
 Définir une structure de données adaptée au stockage des formes fléchies. Cette 
 structure devra comporter un entier indiquant le nombre de formes fléchies qu’elle 
 stocke ; 
@@ -79,4 +78,6 @@ stocker l infinitif des verbs
 Formes fléchies manquantes 
 Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vous faut 
 trouver un moyen de noter cette information de manière claire
+
+4 5
 */
