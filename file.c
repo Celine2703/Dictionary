@@ -13,7 +13,7 @@ int main()
         return (1);
     while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF)
     {
-        printf("%s, %s, %s\n", mot, base, flechies);
+        //printf("%s, %s, %s\n", mot, base, flechies);
         data.base = base;
         data.mot = mot;
         data.flechie = flechies;

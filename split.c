@@ -12,6 +12,7 @@ static int	ft_init(int i, const char *str, char s)
 	return (cpt);
 }
 
+//counts the number of strings
 static int	ft_count(const char *str, char s, int i)
 {
 	int	nbmot;
@@ -78,6 +79,7 @@ static int	ft_put_inside(char **final, const char *str, char s, int i)
 	return (0);
 }
 
+//create a table of strings based on a string and a character that's a separator
 char	**ft_split(char const *str, char const c)
 {
 	char	**final;
