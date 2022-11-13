@@ -7,6 +7,16 @@ t_tree    ft_init_verbe()
     return (tab_verbe);
 }
 
+void ft_init_mot(t_mot *mot)
+{
+    mot ->temps = NULL;
+	mot ->genre = 0;
+	mot ->nombre = 0;
+	mot ->personne = 0;
+	mot ->base = NULL;
+	mot ->mot = NULL;
+}
+
 t_tree   createTree(t_node *node)
 {
     t_tree tree;
@@ -25,12 +35,13 @@ t_node    *createNode(char lettre)
     return(node);
 }
 
-t_list *createFlechie(t_list *list, char *str)
+t_list *createFlechie(t_list *list, t_recup data)
 {
     t_list *temp = list;
     if (list == NULL)
     {
-        list ->mot = createMot(str);
+        list = malloc(sizeof(t_list));
+        list ->mot = createMot(data);
         list ->next = NULL;
     }
     else
@@ -40,13 +51,31 @@ t_list *createFlechie(t_list *list, char *str)
             temp = list;
             list = list ->next;
         }
-        temp ->next -> mot = createMot(str);
+        temp ->next = malloc(sizeof(t_list));
+        temp ->next ->mot = createMot(data);
         temp ->next ->next = NULL;
     }
     return (list);
 }
 
-t_mot createMot(char *str)
+t_mot *createMot(t_recup data)
 {
-    
+    t_mot *mot = malloc(sizeof(t_mot));
+    char **split = ft_split(data.flechie + 4, '+');
+    ft_init_mot(mot);
+    if (data.arbre == 1)
+    {
+        if(split[0])
+        {
+            mot ->temps = split[0];
+            if(split[1])
+            {
+                mot ->nombre = split[1][0];
+                if(split[2] && split[2][0] && split[2][1])
+                    mot ->personne = split[2][1];
+            }
+        }
+    }
+    ft_clear(split);
+    return (mot);
 }
