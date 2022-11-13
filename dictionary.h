@@ -57,7 +57,7 @@ int ft_remplit(t_recup data, t_tree tree);
 void ft_display(t_node *node);
 
 //clear
-void	ft_clear(char **str);
+void	ft_clear_split(char **str);
 
 #endif
 

@@ -76,6 +76,6 @@ t_mot *createMot(t_recup data)
             }
         }
     }
-    ft_clear(split);
+    ft_clear_split(split);
     return (mot);
 }

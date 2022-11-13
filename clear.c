@@ -1,6 +1,6 @@
 #include "dictionary.h"
 
-void	ft_clear(char **str)
+void	ft_clear_split(char **str)
 {
 	int	i;
 
