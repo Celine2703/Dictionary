@@ -18,6 +18,7 @@ typedef struct s_mot
 
 typedef struct s_list
 {
+	int size;
 	t_mot *mot;
 	struct s_list *next;
 } t_list;

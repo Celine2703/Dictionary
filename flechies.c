@@ -10,6 +10,7 @@ t_list *createFlechie(t_list *head, t_data data)
         //add the new word
         head ->mot = createMot(data);
         head ->next = NULL;
+        head ->size = 1;
         return (head);
     }
     //if there is a list, add the word at the end
@@ -22,6 +23,7 @@ t_list *createFlechie(t_list *head, t_data data)
         //add the new word
         list ->next ->mot = createMot(data);
         list ->next ->next = NULL;
+        head ->size += 1;
         return(head);
     }
 }
