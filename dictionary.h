@@ -60,6 +60,10 @@ t_mot 	*createMot(t_data data);
 int 	ft_choose(char *flechie);
 int 	ft_put_data(t_data data, t_tree *tree);
 
+//random
+int 	ft_verif_end(t_node *node);
+void    ft_random_word(t_tree tree);
+
 //display
 void 	ft_display(t_node *node);
 void 	display_f(t_list *list);

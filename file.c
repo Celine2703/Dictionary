@@ -33,6 +33,7 @@ int main(int argc, char **argv)
     printf("\n");
     ft_display(tab_tree[3].root);
 
+    ft_random_word(tab_tree[0]);
     ft_clear_tree(tab_tree, 4);
     fclose(fp);
 }
