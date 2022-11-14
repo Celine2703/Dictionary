@@ -56,14 +56,19 @@ t_list *createFlechie(t_list *list, t_recup data)
     else
     {
         t_list *head = list;
+        printf("boucle %s\n", list ->mot ->mot);
+        display_f(head);
         while (list ->next != NULL) //go to the end of the list
-        {
+        { 
+            printf("fct avant %s\n", list ->mot ->mot);
             list = list ->next;
+            printf("fct apres %s\n\n", list ->mot ->mot);
         }
         list ->next = malloc(sizeof(t_list));
         //add the new word
         list ->next ->mot = createMot(data);
         list ->next ->next = NULL;
+        //display_f(head);
         return(head);
     }
 }
