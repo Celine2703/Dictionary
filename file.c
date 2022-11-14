@@ -6,7 +6,7 @@ int main()
     char mot[30];
     char base[30];
     char flechies[30];
-    t_recup data;
+    t_data data;
     t_tree tab_tree[4];
 
     ft_init_tab(tab_tree);
@@ -20,8 +20,9 @@ int main()
         data.mot = mot;
         data.flechie = flechies;
         data.arbre = ft_choose(flechies);
-        ft_remplit(data, tab_tree); //put the data in the tree
+        ft_put_data(data, tab_tree); //put the data in the tree
     }
+    //diplay the trees
     ft_display(tab_tree[0].root);
     printf("\n");
     ft_display(tab_tree[1].root);
@@ -29,5 +30,7 @@ int main()
     ft_display(tab_tree[2].root);
     printf("\n");
     ft_display(tab_tree[3].root);
+
+    ft_clear_tree(tab_tree, 4);
     fclose(fp);
 }

@@ -34,32 +34,41 @@ typedef struct s_tree
 	t_node *root;
 } t_tree;
 
-typedef struct s_recup
+typedef struct s_data
 {
 	char *base;
 	char *mot;
 	char *flechie;
 	int arbre;
-}	t_recup;
+}	t_data;
 
 //split
 char	**ft_split(char const *str, char const c);
 
 //init
 void    ft_init_tab(t_tree *tab_tree);
+void	ft_init_mot(t_mot *mot);
 t_tree	createTree(t_node *node);
 t_node	*createNode(char lettre);
-t_list *createFlechie(t_list *list, t_recup data);
-t_mot *createMot(t_recup data);
+
+//flechies
+t_list 	*createFlechie(t_list *list, t_data data);
+t_mot 	*createMot(t_data data);
 
 //parsing
-int ft_choose(char *flechie);
-int ft_remplit(t_recup data, t_tree *tree);
-void ft_display(t_node *node);
-void display_f(t_list *list);
+int 	ft_choose(char *flechie);
+int 	ft_put_data(t_data data, t_tree *tree);
+
+//display
+void 	ft_display(t_node *node);
+void 	display_f(t_list *list);
 
 //clear
 void	ft_clear_split(char **str);
+void	ft_clear_mot(t_mot *mot);
+void	ft_clear_list(t_list *list);
+void    ft_clear_node(t_node *node);
+void    ft_clear_tree(t_tree *tree, int size);
 
 #endif
 
