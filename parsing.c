@@ -19,7 +19,7 @@ int ft_choose(char *flechie)
 int ft_remplit(t_recup data, t_tree *tree)
 {
     int i = 0;
-    t_node *node = tree[data.arbre - 1].root;
+    t_node *node = tree[data.arbre - 1].root; //starting with the root of the right tree
     //put the base in the tree letter by letter
     while (data.base[i] != 0)
     {

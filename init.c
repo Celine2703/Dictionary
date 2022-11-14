@@ -41,34 +41,27 @@ t_node    *createNode(char lettre)
 }
 
 //create a list with the word or add the word to a existent list 
-t_list *createFlechie(t_list *list, t_recup data)
+t_list *createFlechie(t_list *head, t_recup data)
 {
-    //if there isn't a list yet
-    if (list == NULL)
+    //if there isn't a list
+    if (head == NULL)
     {
-        list = malloc(sizeof(t_list));
+        head = malloc(sizeof(t_list));
         //add the new word
-        list ->mot = createMot(data);
-        list ->next = NULL;
-        return (list);
+        head ->mot = createMot(data);
+        head ->next = NULL;
+        return (head);
     }
     //if there is a list, add the word at the end
     else
     {
-        t_list *head = list;
-        printf("boucle %s\n", list ->mot ->mot);
-        display_f(head);
+        t_list *list = head;
         while (list ->next != NULL) //go to the end of the list
-        { 
-            printf("fct avant %s\n", list ->mot ->mot);
             list = list ->next;
-            printf("fct apres %s\n\n", list ->mot ->mot);
-        }
         list ->next = malloc(sizeof(t_list));
         //add the new word
         list ->next ->mot = createMot(data);
         list ->next ->next = NULL;
-        //display_f(head);
         return(head);
     }
 }
@@ -83,7 +76,7 @@ t_mot *createMot(t_recup data)
     {
         if(split[0])
         {
-            mot ->temps = split[0]; //stock the time (present, etc..)
+            mot ->temps = strdup(split[0]); //stock the time (present, etc..)
             if(split[1])
             {
                 mot ->nombre = split[1][0]; //stock the info plural or singular
@@ -92,8 +85,17 @@ t_mot *createMot(t_recup data)
             }
         }
     }
-    mot ->base = data.base;
-    mot ->mot = data.mot;
+    else if (data.arbre == 2 || data.arbre == 3) //is it's a noun or an adj
+    {
+        if(split[0])
+        {
+            mot ->genre = split[0][0]; //stock the genre (M/F)
+            if(split[1])
+                mot ->nombre = split[1][0]; //stock the info plural or singular
+        }
+    }
+    mot ->base = strdup(data.base);
+    mot ->mot = strdup(data.mot);
     ft_clear_split(split); //free the table
     return (mot);
 }
