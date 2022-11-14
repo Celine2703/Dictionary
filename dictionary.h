@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 //struct to stock the infos of the word
 typedef struct s_mot
@@ -62,6 +63,7 @@ int 	ft_put_data(t_data data, t_tree *tree);
 
 //random
 int 	ft_verif_end(t_node *node);
+int 	ft_leaf(t_node *node);
 void    ft_random_word(t_tree tree);
 
 //display

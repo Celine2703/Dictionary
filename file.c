@@ -33,7 +33,11 @@ int main(int argc, char **argv)
     printf("\n");
     ft_display(tab_tree[3].root);
 
-    ft_random_word(tab_tree[0]);
+    srand((unsigned)time(NULL));
+    int random_tree = rand()%4;
+    while (ft_leaf(tab_tree[random_tree].root) == 1)
+        random_tree = rand()%4;
+    ft_random_word(tab_tree[random_tree]);
     ft_clear_tree(tab_tree, 4);
     fclose(fp);
 }
