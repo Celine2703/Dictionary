@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     char mot[30];
     char base[30];
     char flechies[30];
-    t_data data;
+    t_data *data = malloc(sizeof(t_data));
     t_tree tab_tree[4];
 
     ft_init_tab(tab_tree);
@@ -18,11 +18,12 @@ int main(int argc, char **argv)
     //put the data in the t_recup struc and then in the tree 
     while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF)
     {
-        data.base = base;
-        data.mot = mot;
-        data.flechie = flechies;
-        data.arbre = ft_choose(flechies);
-        ft_put_data(data, tab_tree); //put the data in the tree
+        data ->base = base;
+        data ->mot = mot;
+        data ->flechie = flechies;
+        data ->arbre = ft_choose(flechies);
+        printf("%s\n\n", data ->mot);
+        ft_put_data(*data, tab_tree); //put the data in the tree
     }
     //diplay the trees
     ft_display(tab_tree[0].root);

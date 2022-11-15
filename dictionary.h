@@ -28,7 +28,7 @@ typedef struct s_node
 {
 	char lettre;
 	t_list *liste_flechie;
-	struct s_node *tab_node[26];
+	struct s_node *tab_node[27];
 } t_node;
 
 typedef struct s_tree
@@ -97,6 +97,8 @@ Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vo
 trouver un moyen de noter cette information de manière claire
 
 4 5
+
+ajout du "-"
 
 README
 */
