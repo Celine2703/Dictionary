@@ -19,6 +19,7 @@ int main(int argc, char **argv)
     //put the data in the t_recup struc and then in the tree 
     while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF)
     {
+        printf("%s\n", mot);
         if (ft_choose(flechies))
         {
             data ->base = base;
