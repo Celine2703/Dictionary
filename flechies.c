@@ -4,7 +4,6 @@
 t_list *createFlechie(t_list *head, t_data data)
 {
     //if there isn't a list
-    printf("%p", head);
     if (head == NULL)
     {
         head = malloc(sizeof(t_list));

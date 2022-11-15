@@ -8,7 +8,7 @@ void ft_display(t_node *node)
     {
         display_f(node ->liste_flechie);
     }
-    for (int i = 0; i<26; i++)
+    for (int i = 0; i<28; i++)
     {
         if (node ->tab_node[i])
             ft_display(node ->tab_node[i]);

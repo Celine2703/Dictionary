@@ -9,7 +9,7 @@ int ft_verif_end(t_node *node)
 
 int ft_leaf(t_node *node)
 {
-    for (int i = 0; i < 26; i++)
+    for (int i = 0; i < 28; i++)
     {    
         if (node ->tab_node[i])
             return (0);
@@ -25,10 +25,10 @@ void    ft_random_word(t_tree tree)
     int j = 0;
 
     srand((unsigned)time(NULL));
-    i = rand() %26;
+    i = rand() %28;
     while (node ->tab_node[i] == NULL)
     {
-        i = rand() %26;
+        i = rand() %28;
     }
     node = node ->tab_node[i];
     while (!ft_verif_end(node))
@@ -39,7 +39,7 @@ void    ft_random_word(t_tree tree)
             node = node ->tab_node[i];
             j++;
         }
-        i = rand() %26;
+        i = rand() %28;
     }
     random_word[j++] = node ->lettre;
     random_word[j++] = 0;

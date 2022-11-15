@@ -36,7 +36,7 @@ t_node    *createNode(char lettre)
     node = malloc(sizeof(t_node));
     node ->lettre = lettre;
     node ->liste_flechie = NULL;
-    for(int i = 0; i < 27; i++)
+    for(int i = 0; i < 28; i++)
         node ->tab_node[i] = NULL;
     return(node);
 }

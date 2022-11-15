@@ -27,6 +27,12 @@ int ft_put_data(t_data data, t_tree *tree)
     {
         if (data.base[i] == '-')
         {
+            if(!node ->tab_node[26])
+                node ->tab_node[26] = createNode(data.base[i]);
+            node = node ->tab_node[26];
+        }
+        else if (data.base[i] == 39)
+        {
             if(!node ->tab_node[27])
                 node ->tab_node[27] = createNode(data.base[i]);
             node = node ->tab_node[27];

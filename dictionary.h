@@ -100,5 +100,7 @@ trouver un moyen de noter cette information de manière claire
 
 ajout du "-"
 
+ATTENTION au stock des données des fléchies qui peuvent etre cheloues
+
 README
 */
