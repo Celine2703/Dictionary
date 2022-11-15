@@ -36,7 +36,7 @@ void	ft_clear_list(t_list *list)
 
 void    ft_clear_node(t_node *node)
 {
-    for (int i = 0; i<28; i++)
+    for (int i = 0; i < 28; i++)
     {
         if (node ->tab_node[i])
             ft_clear_node(node ->tab_node[i]);

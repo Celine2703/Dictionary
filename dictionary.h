@@ -28,7 +28,7 @@ typedef struct s_node
 {
 	char lettre;
 	t_list *liste_flechie;
-	struct s_node *tab_node[27];
+	struct s_node *tab_node[28];
 } t_node;
 
 typedef struct s_tree

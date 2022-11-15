@@ -6,7 +6,7 @@ stabilisait	stabiliser	Ver:IImp+SG+P3
 stabilisames	stabiliser	Ver:IPSim+PL+P1
 stabilisant	stabilisant	Adj:Mas+SG
 stabilisant	stabilisant	Nom:Mas+SG
-stabilisant	stabiliser	Ver:PPre
-stabi-lisassent	stabiliser	Ver:SImp+PL+P3
+stabili-sant	stab'iliser	Ver:PPre
+stabi'lisassent	stabiliser	Ver:SImp+PL+P3
 gentiment	gen-til	Adv
 a   a   Nom:Mas+InvPL
