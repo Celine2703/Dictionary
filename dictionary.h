@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 #include <time.h>
 
 //struct to stock the infos of the word
@@ -80,7 +81,6 @@ void    ft_clear_tree(t_tree *tree, int size);
 #endif
 
 /*a faire :
-parsing verif mot a traiter (et ceux a pas traiter dc)
 Définir une structure de données adaptée au stockage des formes fléchies. Cette 
 structure devra comporter un entier indiquant le nombre de formes fléchies qu’elle 
 stocke ; 
@@ -98,9 +98,11 @@ trouver un moyen de noter cette information de manière claire
 
 4 5
 
-ajout du "-"
+random a continuer (1/2 continuer)
 
 ATTENTION au stock des données des fléchies qui peuvent etre cheloues
+
+clear si erreur
 
 README
 */

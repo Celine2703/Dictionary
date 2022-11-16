@@ -2,9 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    if (argc != 2)
+    if (argc != 2) //ne prend qu'un seul fichier dictionnaire
         return (0);
-    FILE *fp;
+    FILE *fp; //FILE pointer to access a file
     char mot[30];
     char base[30];
     char flechies[100];
@@ -12,19 +12,19 @@ int main(int argc, char **argv)
     t_tree tab_tree[4];
 
     ft_init_tab(tab_tree);
-    fp = fopen(argv[1], "r"); //use of the function fopen
+    fp = fopen(argv[1], "r"); //use of the function fopen with the mode read only
     if (fp == NULL)
-        return (1);
+        return (perror("Erreur ouverture de fichier\n"), errno);
     
-    //put the data in the t_recup struc and then in the tree 
-    while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF)
+    //put the data in the t_data struct and then in the tree
+    while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF) //EOF = End Of File
     {
-        if (ft_choose(flechies))
+        if (ft_choose(flechies)) //If it's a word we have to consider (verbe, noun, adj or adv)
         {
             data ->base = base;
             data ->mot = mot;
             data ->flechie = flechies;
-            data ->arbre = ft_choose(flechies);
+            data ->arbre = ft_choose(flechies); //to know in which tree putting the data
             ft_put_data(*data, tab_tree); //put the data in the tree
         }
     }
@@ -37,6 +37,7 @@ int main(int argc, char **argv)
     printf("\n");
     ft_display(tab_tree[3].root);
 
+    //random base word
     srand((unsigned)time(NULL));
     int random_tree = rand()%4;
     while (ft_leaf(tab_tree[random_tree].root) == 1)

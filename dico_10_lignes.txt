@@ -10,3 +10,4 @@ stabili-sant	stab'iliser	Ver:PPre
 stabi'lisassent	stabiliser	Ver:SImp+PL+P3
 gentiment	gen-til	Adv
 a   a   Nom:Mas+InvPL
+cuirassees	cuirasser	Ver:PPas+Fem+PL

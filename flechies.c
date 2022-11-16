@@ -39,7 +39,16 @@ t_mot *createMot(t_data data)
         if(split[0])
         {
             mot ->temps = strdup(split[0]); //stock the time (present, etc..)
-            if(split[1])
+            if(!strncmp(split[0], "PPas", 4))
+            {
+                if(split[1])
+                {
+                    mot ->genre = split[1][0]; //stock the gender info (F/M)
+                    if(split[2] && split[2][0] && split[2][1])
+                        mot ->nombre = split[2][1]; //stock the info plural or singular
+                }
+            }
+            else if(split[1])
             {
                 mot ->nombre = split[1][0]; //stock the info plural or singular
                 if(split[2] && split[2][0] && split[2][1])
