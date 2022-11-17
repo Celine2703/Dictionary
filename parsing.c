@@ -49,3 +49,36 @@ int ft_put_data(t_data data, t_tree *tree)
     node ->liste_flechie = createFlechie(node ->liste_flechie, data);
     return (0);
 }
+
+int ft_read_file(t_tree *tab_tree)
+{
+    t_data *data = malloc(sizeof(t_data));
+    FILE *fp; //FILE pointer to access a file
+    char mot[30];
+    char base[30];
+    char flechies[100];
+    char fichier[100] = "";
+
+    printf("Enter a dictionary path\n");
+    scanf("%s", fichier);
+    fp = fopen(fichier, "r"); //use of the function fopen with the mode read only
+    if (fp == NULL)
+        return (free(data), perror("Error while opening the file\n"), errno);
+    
+    //put the data in the t_data struct and then in the tree
+    while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF) //EOF = End Of File
+    {
+        if (ft_choose(flechies)) //If it's a word we have to consider (verbe, noun, adj or adv)
+        {
+            data ->base = base;
+            data ->mot = mot;
+            data ->flechie = flechies;
+            data ->arbre = ft_choose(flechies); //to know in which tree putting the data
+            ft_put_data(*data, tab_tree); //put the data in the tree
+        }
+    }
+    free(data);
+    fclose(fp);
+    printf("Trees had been generated successfully !\n");
+    return (0);
+}

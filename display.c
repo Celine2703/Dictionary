@@ -1,5 +1,15 @@
 #include "dictionary.h"
 
+void    ft_print_menu()
+{
+    printf("\nMENU :\n");
+    printf("1 : Construction of trees\n");
+    printf("2 : Display of the trees\n");
+    printf("3 : Generate a random word\n");
+    printf("4 : Searching for a base word\n");
+    printf("6 : Exit\n\n");
+}
+
 void ft_display(t_node *node)
 {
     if (node ->lettre != -1)

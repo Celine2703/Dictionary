@@ -45,3 +45,23 @@ void    ft_random_word(t_tree tree)
     random_word[j++] = 0;
     printf("Mot trouvé : %s\n", random_word);
 }
+
+void ft_random_base(t_tree *tab_tree)
+{
+    int vide = 1;
+    srand((unsigned)time(NULL));
+    for (int i = 0; i < 4; i++)
+    {
+        if (ft_leaf(tab_tree[i].root) != 1)
+            vide = 0;
+    }
+    if (vide)
+    {
+        printf("No trees had been generated. Please try to generate trees with a dictionary before.\n");
+        return;
+    }
+    int random_tree = rand()%4;
+    while (ft_leaf(tab_tree[random_tree].root) == 1)
+        random_tree = rand()%4;
+    ft_random_word(tab_tree[random_tree]);
+}

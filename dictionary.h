@@ -61,16 +61,20 @@ t_mot 	*createMot(t_data data);
 //parsing
 int 	ft_choose(char *flechie);
 int 	ft_put_data(t_data data, t_tree *tree);
+int		ft_read_file(t_tree *tab_tree);
 
 //random
 int 	ft_verif_end(t_node *node);
 int 	ft_leaf(t_node *node);
 void    ft_random_word(t_tree tree);
+void	ft_random_base(t_tree *tab_tree);
 
 //search
-void ft_base_search(t_tree tree, char *str_to_search);
+void 	ft_base_in_tree(t_tree tree, char *str_to_search);
+void 	ft_base_search(t_tree *tab_tree);
 
 //display
+void    ft_print_menu();
 void 	ft_display(t_node *node);
 void 	display_f(t_list *list);
 
