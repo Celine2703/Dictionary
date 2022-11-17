@@ -30,9 +30,13 @@ void ft_base_search(t_tree *tab_tree)
 
     printf("quelle base? ");
     scanf("\n%s", base_word);
-    do {
-    printf("quelle classe? (Ver, Nom, Ajd or Adv). Please don't forget the uppercases : ");
-    scanf("\n%s", classe);
+    scanf("%*[^\n]");
+    getchar();
+    do{
+        printf("quelle classe? (Ver, Nom, Ajd or Adv). Please don't forget the uppercases : ");
+        scanf("\n%s", classe);
+        scanf("%*[^\n]");
+        getchar();
     } while (!ft_choose(classe));
     ft_base_in_tree(tab_tree[ft_choose(classe) - 1], base_word);
 }

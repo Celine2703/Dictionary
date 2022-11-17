@@ -61,9 +61,11 @@ int ft_read_file(t_tree *tab_tree)
 
     printf("Enter a dictionary path\n");
     scanf("%s", fichier);
+    scanf("%*[^\n]");
+    getchar();
     fp = fopen(fichier, "r"); //use of the function fopen with the mode read only
     if (fp == NULL)
-        return (free(data), perror("Error while opening the file\n"), errno);
+        return (free(data), perror("Error while opening the file "), errno);
     
     //put the data in the t_data struct and then in the tree
     while (fscanf(fp, "%s %s %s", mot, base, flechies) != EOF) //EOF = End Of File
