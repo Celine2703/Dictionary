@@ -67,6 +67,9 @@ int 	ft_verif_end(t_node *node);
 int 	ft_leaf(t_node *node);
 void    ft_random_word(t_tree tree);
 
+//search
+void ft_base_search(t_tree tree, char *str_to_search);
+
 //display
 void 	ft_display(t_node *node);
 void 	display_f(t_list *list);
@@ -95,8 +98,6 @@ stocker l infinitif des verbs
 Formes fléchies manquantes 
 Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vous faut 
 trouver un moyen de noter cette information de manière claire
-
-4 5
 
 random a continuer (1/2 continuer)
 
