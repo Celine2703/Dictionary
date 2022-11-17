@@ -54,6 +54,11 @@ void	ft_init_mot(t_mot *mot);
 t_tree	createTree(t_node *node);
 t_node	*createNode(char lettre);
 
+//verif
+int 	ft_verif_end(t_node *node);
+int 	ft_leaf(t_node *node);
+int 	ft_empty_trees(t_tree *tab_tree);
+
 //flechies
 t_list 	*createFlechie(t_list *list, t_data data);
 t_mot 	*createMot(t_data data);
@@ -64,8 +69,6 @@ int 	ft_put_data(t_data data, t_tree *tree);
 int		ft_read_file(t_tree *tab_tree);
 
 //random
-int 	ft_verif_end(t_node *node);
-int 	ft_leaf(t_node *node);
 void    ft_random_word(t_tree tree);
 void	ft_random_base(t_tree *tab_tree);
 

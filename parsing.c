@@ -81,6 +81,9 @@ int ft_read_file(t_tree *tab_tree)
     }
     free(data);
     fclose(fp);
-    printf("Trees had been generated successfully !\n");
+    if(!ft_empty_trees(tab_tree))
+        printf("Trees had been generated successfully !\n");
+    else
+        printf("It seemed that the file wasn't a dictionary. No tree has been created !\n");
     return (0);
 }

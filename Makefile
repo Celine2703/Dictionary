@@ -1,4 +1,4 @@
-SRCS	= init.c file.c parsing.c split.c clear.c display.c flechies.c random.c searching.c
+SRCS	= init.c file.c parsing.c split.c clear.c display.c flechies.c random.c searching.c verif.c
 
 DIR_SRC	= ./
 

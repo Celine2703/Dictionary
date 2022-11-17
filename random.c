@@ -1,22 +1,5 @@
 #include "dictionary.h"
 
-int ft_verif_end(t_node *node)
-{
-    if (node ->liste_flechie)
-        return (1);
-    return (0);
-}
-
-int ft_leaf(t_node *node)
-{
-    for (int i = 0; i < 28; i++)
-    {    
-        if (node ->tab_node[i])
-            return (0);
-    }
-    return (1);
-}
-
 void    ft_random_word(t_tree tree)
 {
     char random_word[30];
@@ -48,14 +31,8 @@ void    ft_random_word(t_tree tree)
 
 void ft_random_base(t_tree *tab_tree)
 {
-    int vide = 1;
     srand((unsigned)time(NULL));
-    for (int i = 0; i < 4; i++)
-    {
-        if (ft_leaf(tab_tree[i].root) != 1)
-            vide = 0;
-    }
-    if (vide)
+    if(ft_empty_trees(tab_tree))
     {
         printf("No trees had been generated. Please try to generate trees with a dictionary before.\n");
         return;
