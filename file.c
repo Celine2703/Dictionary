@@ -48,10 +48,9 @@ int main(int argc, char **argv)
         
         else if (input == '6')
             printf("EXIT\n");
+
         else
-        {
             printf("Incorrect input. Please try again.\n");
-        }
 
     } while(input != '6');
     //clear

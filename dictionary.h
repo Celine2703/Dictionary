@@ -73,7 +73,7 @@ void    ft_random_word(t_tree tree);
 void	ft_random_base(t_tree *tab_tree);
 
 //search
-void 	ft_base_in_tree(t_tree tree, char *str_to_search);
+int 	ft_base_in_tree(t_tree tree, char *str_to_search);
 void 	ft_base_search(t_tree *tab_tree);
 
 //display

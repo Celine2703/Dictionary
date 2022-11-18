@@ -1,6 +1,6 @@
 #include "dictionary.h"
 
-void ft_base_in_tree(t_tree tree, char *str_to_search)
+int ft_base_in_tree(t_tree tree, char *str_to_search)
 {
     t_node *node = tree.root;
     int i = 0;
@@ -17,10 +17,9 @@ void ft_base_in_tree(t_tree tree, char *str_to_search)
         else
             j++;
     }
-    if (str_to_search[i] == 0)
-        printf("mot %s trouvé\n", str_to_search);
-    else
-        printf("mot %s non trouvé\n", str_to_search);
+    if (str_to_search[i] == 0 && node ->liste_flechie)
+        return (1);
+    return (0);
 }
 
 void ft_base_search(t_tree *tab_tree)
@@ -28,15 +27,33 @@ void ft_base_search(t_tree *tab_tree)
     char base_word[30];
     char classe[10];
 
-    printf("quelle base? ");
+    printf("Which base? ");
     scanf("\n%s", base_word);
     scanf("%*[^\n]");
     getchar();
     do{
-        printf("quelle classe? (Ver, Nom, Ajd or Adv). Please don't forget the uppercases : ");
+        printf("Which class? (Ver, Nom, Ajd, Adv or All). Please don't forget the uppercases : ");
         scanf("\n%s", classe);
         scanf("%*[^\n]");
         getchar();
-    } while (!ft_choose(classe));
-    ft_base_in_tree(tab_tree[ft_choose(classe) - 1], base_word);
+    } while (!ft_choose(classe) && strncmp("All", classe,  4));
+    if (!strncmp(classe, "All", 4))
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (ft_base_in_tree(tab_tree[i], base_word))
+            { 
+                printf("The word %s has been found !\n", base_word);
+                return;
+            }
+        }
+        printf("The word %s hasn't been found\n", base_word);
+    }
+    else
+    {
+        if (ft_base_in_tree(tab_tree[ft_choose(classe) - 1], base_word))
+            printf("The word %s has been found !\n", base_word);
+        else
+            printf("The word %s hasn't been found !\n", base_word);
+    }
 }
