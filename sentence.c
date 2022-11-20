@@ -1,5 +1,6 @@
 #include "dictionary.h"
 
+//printf a sentence based on 3 different models
 void    ft_sentence_generator(t_tree *tab_tree)
 {
     if(ft_empty_trees(tab_tree))

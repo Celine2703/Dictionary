@@ -61,6 +61,7 @@ int main(int argc, char **argv)
         ft_print_menu();
         }
 
+        //Exit the program
         else if (input == '0')
             printf("EXIT\n");
 

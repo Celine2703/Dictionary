@@ -1,7 +1,8 @@
 #include "dictionary.h"
 
 //base
-
+ 
+// look if str_to_search is a base word of tree
 int ft_base_in_tree(t_tree tree, char *str_to_search)
 {
     t_node *node = tree.root;
@@ -24,6 +25,7 @@ int ft_base_in_tree(t_tree tree, char *str_to_search)
     return (0);
 }
 
+// get the input and start the research on the selected tree
 void ft_base_search(t_tree *tab_tree)
 {
     char base_word[30];
@@ -61,7 +63,7 @@ void ft_base_search(t_tree *tab_tree)
 }
 
 //flechie
-
+// look if mot is contained on a t_list 
 char *search_in_list(t_list *liste, char *mot)
 {
 	while (liste)
@@ -72,17 +74,17 @@ char *search_in_list(t_list *liste, char *mot)
 	}
 	return (NULL);
 }
-
+// look if a mot is contained on a tree
 char *search_in_tree(t_node *tree, char *mot, unsigned int cpt)
 {
 	char *result = NULL;
 	(void)cpt;
 	if (tree == NULL)
 		return (NULL);
-	result = search_in_list(tree->liste_flechie, mot);
+	result = search_in_list(tree->liste_flechie, mot); //look if it is on this node
 	if (result)
 		return (result);
-	if(strlen(mot) > cpt)
+	if(strlen(mot) > cpt) // if mot is not ended go to the next corresponding node
 	{
 		if (mot[cpt + 1] == '-')
 			result = search_in_tree(tree->tab_node[26], mot, cpt + 1);
@@ -93,7 +95,7 @@ char *search_in_tree(t_node *tree, char *mot, unsigned int cpt)
 	}
 	if (result)
 		return (result);
-	for (int i = 0; i < 28; i++)
+	for (int i = 0; i < 28; i++) // go look on another child node
 	{
 		result = search_in_tree(tree->tab_node[i], mot,cpt +1);
 		if (result)
@@ -102,6 +104,7 @@ char *search_in_tree(t_node *tree, char *mot, unsigned int cpt)
 	return (NULL);
 }
 
+//take the input and launch a flechie search and print the result
 void search_flechies(t_tree *tab_tree)
 {
     char *result = NULL;

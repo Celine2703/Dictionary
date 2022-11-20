@@ -12,6 +12,7 @@ void	ft_clear_split(char **str)
 	str = 0;
 }
 
+//clear a t_mot structure
 void	ft_clear_mot(t_mot *mot)
 {
     free(mot ->temps);
@@ -19,6 +20,8 @@ void	ft_clear_mot(t_mot *mot)
     free(mot ->mot);
     free(mot);
 }
+
+//clear a t_list
 void	ft_clear_list(t_list *list)
 {
 	t_list	*temp;
@@ -34,6 +37,7 @@ void	ft_clear_list(t_list *list)
 	}
 }
 
+//clear a t_node
 void    ft_clear_node(t_node *node)
 {
     for (int i = 0; i < 28; i++)
@@ -46,6 +50,7 @@ void    ft_clear_node(t_node *node)
     free(node);
 }
 
+//clear a table of t_tree
 void    ft_clear_tree(t_tree *tree, int size)
 {
     for (int i = 0; i < size; i++)
