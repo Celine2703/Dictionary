@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 
     ft_print_menu();
     ft_init_tab(tab_tree);
+    srand((unsigned)time(NULL));
     //menu
     do{
         scanf("%c", &input);
@@ -46,6 +47,12 @@ int main(int argc, char **argv)
         ft_print_menu();
         }
         
+        else if (input == '5'){
+        //sentence generator
+        ft_sentence_generator(tab_tree);
+        ft_print_menu();
+        }
+
         else if (input == '6')
             printf("EXIT\n");
 

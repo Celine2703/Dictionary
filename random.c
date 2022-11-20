@@ -1,13 +1,12 @@
 #include "dictionary.h"
 
-void    ft_random_word(t_tree tree)
+t_node    *ft_random_word(t_tree tree)
 {
     char random_word[30];
     t_node *node = tree.root;
     int i;
     int j = 0;
 
-    srand((unsigned)time(NULL));
     i = rand() %28;
     while (node ->tab_node[i] == NULL)
     {
@@ -26,12 +25,12 @@ void    ft_random_word(t_tree tree)
     }
     random_word[j++] = node ->lettre;
     random_word[j++] = 0;
-    printf("Mot trouvé : %s\n", random_word);
+    printf("%s ", random_word);
+    return (node);
 }
 
 void ft_random_base(t_tree *tab_tree)
 {
-    srand((unsigned)time(NULL));
     if(ft_empty_trees(tab_tree))
     {
         printf("No trees had been generated. Please try to generate trees with a dictionary before.\n");
@@ -40,5 +39,7 @@ void ft_random_base(t_tree *tab_tree)
     int random_tree = rand()%4;
     while (ft_leaf(tab_tree[random_tree].root) == 1)
         random_tree = rand()%4;
+    printf("Mot trouvé : ");
     ft_random_word(tab_tree[random_tree]);
+    printf("\n");
 }

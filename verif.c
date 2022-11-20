@@ -2,9 +2,15 @@
 
 int ft_verif_end(t_node *node)
 {
-    if (node ->liste_flechie)
-        return (1);
-    return (0);
+    if (node ->liste_flechie == NULL)
+        return (0);
+    else
+    {
+        if (rand() %10 == 0)
+            return (1);
+        else
+            return (0);
+    }
 }
 
 int ft_leaf(t_node *node)

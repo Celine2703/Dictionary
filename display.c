@@ -7,6 +7,7 @@ void    ft_print_menu()
     printf("2 : Display of the trees\n");
     printf("3 : Generate a random word\n");
     printf("4 : Searching for a base word\n");
+    printf("5 : Sentence generator\n");
     printf("6 : Exit\n\n");
 }
 
