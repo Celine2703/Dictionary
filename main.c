@@ -22,9 +22,35 @@ int main(int argc, char **argv)
         ft_read_file(tab_tree);
         ft_print_menu();
         }
+
         else if (input == '2'){
+        //search base form
+        ft_base_search(tab_tree);
+        ft_print_menu();
+        }
+
+        else if(input == '3'){
+        //search flechie form
+        search_flechies(tab_tree);
+        ft_print_menu();
+        }
+
+        else if(input == '4'){
+        //random base word
+        ft_random_base(tab_tree);
+        ft_print_menu();
+        }
+        
+        else if (input == '5'){
+        //sentence generator
+        ft_sentence_generator(tab_tree);
+        ft_print_menu();
+        }
+
+        else if (input == '6'){
         
         //diplay the trees
+        printf("Optional request\n\n");
         ft_display(tab_tree[0].root);
         printf("\n");
         ft_display(tab_tree[1].root);
@@ -35,31 +61,13 @@ int main(int argc, char **argv)
         ft_print_menu();
         }
 
-        else if(input == '3'){
-        //random base word
-        ft_random_base(tab_tree);
-        ft_print_menu();
-        }
-
-        else if (input == '4'){
-        //search
-        ft_base_search(tab_tree);
-        ft_print_menu();
-        }
-        
-        else if (input == '5'){
-        //sentence generator
-        ft_sentence_generator(tab_tree);
-        ft_print_menu();
-        }
-
-        else if (input == '6')
+        else if (input == '0')
             printf("EXIT\n");
 
         else
             printf("Incorrect input. Please try again.\n");
 
-    } while(input != '6');
+    } while(input != '0');
     //clear
     ft_clear_tree(tab_tree, 4);
     return (0);

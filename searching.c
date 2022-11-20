@@ -1,5 +1,7 @@
 #include "dictionary.h"
 
+//base
+
 int ft_base_in_tree(t_tree tree, char *str_to_search)
 {
     t_node *node = tree.root;
@@ -55,5 +57,86 @@ void ft_base_search(t_tree *tab_tree)
             printf("The word %s has been found !\n", base_word);
         else
             printf("The word %s hasn't been found !\n", base_word);
+    }
+}
+
+//flechie
+
+char *search_in_list(t_list *liste, char *mot)
+{
+	while (liste)
+	{
+		if (strcmp(liste->mot->mot, mot) == 0)
+			return (liste->mot->mot);
+		liste = liste->next;
+	}
+	return (NULL);
+}
+
+char *search_in_tree(t_node *tree, char *mot, unsigned int cpt)
+{
+	char *result = NULL;
+	(void)cpt;
+	if (tree == NULL)
+		return (NULL);
+	result = search_in_list(tree->liste_flechie, mot);
+	if (result)
+		return (result);
+	if(strlen(mot) > cpt)
+	{
+		if (mot[cpt + 1] == '-')
+			result = search_in_tree(tree->tab_node[26], mot, cpt + 1);
+		else if (mot[cpt + 1] == '\'')
+			result = search_in_tree(tree->tab_node[27], mot, cpt + 1);
+		else if (tree->tab_node[mot[cpt] - 'a'])
+			result = search_in_tree(tree->tab_node[mot[cpt] - 'a'], mot, cpt + 1);
+	}
+	if (result)
+		return (result);
+	for (int i = 0; i < 28; i++)
+	{
+		result = search_in_tree(tree->tab_node[i], mot,cpt +1);
+		if (result)
+			return (result);
+	}
+	return (NULL);
+}
+
+void search_flechies(t_tree *tab_tree)
+{
+    char *result = NULL;
+    char flechie_word[30];
+	char classe[10];
+
+    printf("Which flechie? ");
+    scanf("\n%s", flechie_word);
+    scanf("%*[^\n]");
+    getchar();
+    do{
+        printf("Which class? (Ver, Nom, Ajd, Adv or All). Please don't forget the uppercases : ");
+        scanf("\n%s", classe);
+        scanf("%*[^\n]");
+        getchar();
+    } while (!ft_choose(classe) && strncmp("All", classe,  4));
+    if (!strncmp(classe, "All", 4))
+    {
+        for (int i = 0; i < 4; i++)
+		{
+			result = search_in_tree(tab_tree[i].root, flechie_word, 0);
+			if (result)
+			{
+				printf("The word %s has been found !\n", result);
+				return;
+			}
+		}
+		printf("The %s hasn't been found\n", result);
+    }
+    else
+    {
+        result = search_in_tree(tab_tree[ft_choose(classe) - 1].root, flechie_word, 0);
+		if (result)
+            printf("The word %s has been found !\n", result);
+        else
+            printf("The word %s hasn't been found !\n", result);
     }
 }

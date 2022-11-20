@@ -79,6 +79,9 @@ void    ft_sentence_generator(t_tree *tab_tree);
 //search
 int		ft_base_in_tree(t_tree tree, char *str_to_search);
 void	ft_base_search(t_tree *tab_tree);
+char *search_in_list(t_list *liste, char *mot);
+char *search_in_tree(t_node *tree, char *mot, unsigned int cpt);
+void search_flechies(t_tree *tab_tree);
 
 //display
 void	ft_print_menu(void);
@@ -93,30 +96,3 @@ void	ft_clear_node(t_node *node);
 void	ft_clear_tree(t_tree *tree, int size);
 
 #endif
-
-/*a faire :
-Définir une structure de données adaptée au stockage des formes fléchies. Cette 
-structure devra comporter un entier indiquant le nombre de formes fléchies qu’elle 
-stocke ; 
-Justifier ce choix dans votre rapport de projet ; 
-Dans les nœuds adaptés à cette catégorie, stocker un pointeur vers cette structure de 
-données, et non directement cette structure de données. Vous indiquerez également 
-dans votre rapport, pourquoi cette contrainte est réellement utile et nécessaire pour 
-l’implémentation du programme.
-
-stocker l infinitif des verbs
-
-Formes fléchies manquantes 
-Il se peut que certaines formes fléchies soient manquantes : dans ce cas, il vous faut 
-trouver un moyen de noter cette information de manière claire
-
-random a continuer (1/2 continuer)
-
-ATTENTION au stock des données des fléchies qui peuvent etre cheloues
-
-split flechies
-
-clear si erreur
-
-README
-*/

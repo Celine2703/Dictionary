@@ -1,4 +1,4 @@
-SRCS	= init.c file.c parsing.c split.c clear.c display.c flechies.c random.c searching.c verif.c sentence.c
+SRCS	= init.c main.c parsing.c split.c clear.c display.c flechies.c random.c searching.c verif.c sentence.c
 
 DIR_SRC	= ./
 
@@ -12,7 +12,7 @@ NAME	= dictionary
 
 CC	= gcc
 
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g 
 
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
