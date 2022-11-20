@@ -70,7 +70,7 @@ int		ft_put_data(t_data data, t_tree *tree);
 int		ft_read_file(t_tree *tab_tree);
 
 //random
-t_node	*ft_random_word(t_tree tree);
+void	ft_random_word(t_tree tree);
 void	ft_random_base(t_tree *tab_tree);
 
 //sentence

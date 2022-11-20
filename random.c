@@ -1,6 +1,6 @@
 #include "dictionary.h"
 
-t_node    *ft_random_word(t_tree tree)
+void    ft_random_word(t_tree tree)
 {
     char random_word[30];
     t_node *node = tree.root;
@@ -26,7 +26,6 @@ t_node    *ft_random_word(t_tree tree)
     random_word[j++] = node ->lettre;
     random_word[j++] = 0;
     printf("%s ", random_word);
-    return (node);
 }
 
 void ft_random_base(t_tree *tab_tree)
