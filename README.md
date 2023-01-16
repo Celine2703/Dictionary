@@ -1,5 +1,7 @@
 # Dictionary
 
+Create and navigate in your own dictionary by using trees and backtracking.
+
 To compile the program enter :
 make
 
