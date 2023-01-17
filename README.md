@@ -2,11 +2,13 @@
 
 Create and navigate in your own dictionary by using trees and backtracking.
 
-To compile the program enter :
-make
+To compile the program :
+
+    make
 
 An executable file dictionary has been created, you can run it by entering :
-./dictionary
+
+    ./dictionary
 
 NB : you don't need to put any arguments after.
 
@@ -23,5 +25,7 @@ MENU :
 NB : You should start by creating trees (1).
 
 When the program has been exited, enter :
-make fclean
+
+    make fclean
+
 to delete the .o files and the executable file.
