@@ -10,7 +10,7 @@ An executable file dictionary has been created, you can run it by entering :
 
     ./dictionary
 
-NB : you don't need to put any arguments after.
+NB : you don't need to put any argument after.
 
 A menu will be printed, you can follow it to navigate through the program.
 MENU :
