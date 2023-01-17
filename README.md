@@ -13,13 +13,21 @@ An executable file dictionary has been created, you can run it by entering :
 NB : you don't need to put any argument after.
 
 A menu will be printed, you can follow it to navigate through the program.
+
 MENU :
+
 1 : Construction of trees
+
 2 : Searching for a base word
+
 3 : Searching for a flechie word
+
 4 : Generate a random base word
+
 5 : Sentence generator
+
 6 : Display of the trees
+
 0 : Exit
 
 NB : You should start by creating trees (1).
